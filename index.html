@@ -1,1 +1,620 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>E-MANAGEMENT | Talent Management</title>
+<meta name="description" content="E-MANAGEMENT adalah agensi talent management yang menjembatani talenta muda dengan industri hospitality dan entertainment terpercaya di Indonesia — sebagai Guest Relation Officer (GRO), baik mandiri maupun melalui mitra perusahaan.">
+<meta name="keywords" content="talent management, GRO, guest relation officer, lowongan talenta, entertainment management, hospitality, klub malam, event organizer, loker talent, E-MANAGEMENT">
+<meta name="author" content="E-MANAGEMENT">
+<meta name="robots" content="index, follow">
 
+<!-- Open Graph / Social Media Preview -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="E-MANAGEMENT | Talent & Entertainment Management">
+<meta property="og:description" content="Membangun karier di industri entertainment dengan standar profesional. Bergabung sebagai talenta atau jadi mitra bisnis kami.">
+<meta property="og:locale" content="id_ID">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="E-MANAGEMENT | Talent & Entertainment Management">
+<meta name="twitter:description" content="Membangun karier di industri entertainment dengan standar profesional.">
+
+<!-- Favicon (opsional, ganti jika sudah punya logo) -->
+<meta name="theme-color" content="#0b0a08">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Cormorant+Garamond:wght@400;500;600;700&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg-black:#0b0a08;
+    --bg-charcoal:#151209;
+    --bg-card:#1c1810;
+    --gold:#c9a227;
+    --gold-light:#e6c667;
+    --gold-dim:#8a7137;
+    --ivory:#f3ede0;
+    --ivory-soft:#c9c2b0;
+    --line:#332c1c;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    background:var(--bg-black);
+    color:var(--ivory);
+    font-family:'Jost',sans-serif;
+    font-weight:300;
+    line-height:1.7;
+    overflow-x:hidden;
+  }
+  h1,h2,h3,.serif{font-family:'Cormorant Garamond',serif;font-weight:500;}
+  a{color:inherit;text-decoration:none;}
+  .wrap{max-width:1100px;margin:0 auto;padding:0 32px;}
+  .eyebrow{
+    letter-spacing:.3em;
+    text-transform:uppercase;
+    font-size:.8rem;
+    color:var(--gold);
+    font-weight:400;
+  }
+
+  /* NAV */
+  nav{
+    position:fixed;top:0;left:0;right:0;z-index:50;
+    display:flex;justify-content:space-between;align-items:center;
+    padding:22px 40px;
+    background:linear-gradient(to bottom, rgba(11,10,8,.95), rgba(11,10,8,0));
+    transition:background .4s ease, backdrop-filter .4s ease, border-color .4s ease, padding .4s ease;
+    border-bottom:1px solid transparent;
+  }
+  nav.scrolled{
+    background:rgba(20,17,10,.55);
+    backdrop-filter:blur(16px) saturate(160%);
+    -webkit-backdrop-filter:blur(16px) saturate(160%);
+    border-bottom:1px solid rgba(201,162,39,.18);
+    padding:14px 40px;
+  }
+  .logo{font-family:'Cinzel',serif;font-weight:700;font-size:18px;letter-spacing:.1em;color:var(--ivory);white-space:nowrap;}
+  .logo span{color:var(--gold);}
+  .nav-links{display:flex;gap:34px;font-size:13px;letter-spacing:.08em;text-transform:uppercase;}
+  .nav-links a{opacity:.75;transition:opacity .25s;}
+  .nav-links a:hover{opacity:1;color:var(--gold-light);}
+  .nav-toggle{display:none;}
+
+  /* HERO */
+  .hero{
+    min-height:100vh;
+    display:flex;flex-direction:column;justify-content:center;align-items:center;
+    text-align:center;
+    position:relative;
+    padding:120px 24px 80px;
+    overflow:hidden;
+    background:#0f0f11;
+  }
+  .hero-video{
+    position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);
+    min-width:100%;min-height:100%;width:auto;height:auto;
+    object-fit:cover;z-index:0;
+  }
+  .hero-overlay{
+    position:absolute;inset:0;z-index:1;
+    background:
+      radial-gradient(ellipse at 50% 15%, rgba(201,162,39,.15), transparent 55%),
+      linear-gradient(180deg, rgba(11,10,8,.55) 0%, rgba(11,10,8,.72) 55%, rgba(11,10,8,.92) 100%);
+  }
+  .hero-rule,.hero .eyebrow,.hero h1,.hero p,.hero-ctas,.trust-line,.scroll-cue{
+    position:relative;z-index:2;
+  }
+  .hero-rule{width:1px;height:70px;background:linear-gradient(var(--gold), transparent);margin-bottom:26px;}
+  .hero h1{
+    font-family:'Cormorant Garamond',serif;
+    font-size:clamp(40px,7vw,72px);
+    line-height:1.15;
+    font-weight:600;
+    color:var(--ivory);
+    max-width:900px;
+  }
+  .hero h1 em{
+    font-style:italic;color:var(--gold-light);
+  }
+  .hero p{
+    margin-top:22px;max-width:560px;color:#ccd0d6;font-size:1.1rem;line-height:1.6;font-weight:300;
+  }
+  .hero-ctas{display:flex;gap:18px;margin-top:44px;flex-wrap:wrap;justify-content:center;}
+  .btn{
+    padding:14px 30px;font-size:.95rem;letter-spacing:1px;text-transform:none;
+    border:2px solid transparent;border-radius:30px;
+    transition:all .3s ease;cursor:pointer;background:transparent;color:var(--ivory);
+    display:inline-block;font-weight:600;
+  }
+  .btn-solid{
+    position:relative;overflow:hidden;
+    background:linear-gradient(135deg, var(--gold-light), var(--gold));
+    border-color:var(--gold);color:#1a1509;font-weight:600;
+    box-shadow:0 4px 20px rgba(201,162,39,.35), 0 0 0 rgba(201,162,39,.4);
+    animation:glow-pulse 2.8s ease-in-out infinite;
+  }
+  @keyframes glow-pulse{
+    0%,100%{box-shadow:0 4px 20px rgba(201,162,39,.35), 0 0 14px rgba(201,162,39,.25);}
+    50%{box-shadow:0 4px 26px rgba(201,162,39,.55), 0 0 30px rgba(201,162,39,.5);}
+  }
+  .btn-solid::before{
+    content:"";position:absolute;top:0;left:-75%;width:50%;height:100%;
+    background:linear-gradient(120deg, transparent, rgba(255,255,255,.55), transparent);
+    transform:skewX(-20deg);
+    animation:shimmer 3.5s ease-in-out infinite;
+  }
+  @keyframes shimmer{
+    0%{left:-75%;}
+    30%,100%{left:130%;}
+  }
+  .btn-solid:hover{
+    background:linear-gradient(135deg, var(--gold-light), var(--gold-light));
+    border-color:var(--gold-light);
+    box-shadow:0 8px 32px rgba(201,162,39,.7), 0 0 40px rgba(201,162,39,.6);
+    transform:translateY(-2px);
+    animation-play-state:paused;
+  }
+  .btn:not(.btn-solid){
+    background:transparent;border-color:#ffffff;color:#ffffff;
+  }
+  .btn:not(.btn-solid):hover{
+    background:#ffffff;color:#000000;border-color:#ffffff;
+    transform:translateY(-2px);
+  }
+  .scroll-cue{position:absolute;bottom:36px;font-size:.8rem;letter-spacing:2px;color:#71717a;text-transform:uppercase;animation:bounce 2s infinite;}
+  @keyframes bounce{
+    0%,20%,50%,80%,100%{transform:translateY(0);}
+    40%{transform:translateY(-10px);}
+    60%{transform:translateY(-5px);}
+  }
+  .trust-line{
+    display:flex;align-items:center;gap:10px;
+    margin-top:34px;font-size:13px;color:var(--ivory-soft);
+    letter-spacing:.02em;
+  }
+  .trust-line strong{color:var(--gold-light);font-weight:400;}
+  .trust-dot{
+    width:6px;height:6px;border-radius:50%;background:var(--gold);
+    box-shadow:0 0 0 3px rgba(201,162,39,.18);
+    animation:pulse 2s ease-in-out infinite;
+  }
+  @keyframes pulse{
+    0%,100%{opacity:1;transform:scale(1);}
+    50%{opacity:.5;transform:scale(1.3);}
+  }
+
+  /* SECTION SHARED */
+  section{padding:120px 0;}
+  .section-head{max-width:640px;margin-bottom:60px;}
+  .section-head h2{font-size:clamp(30px,4vw,46px);margin-top:10px;color:var(--ivory);}
+  .section-head p{margin-top:16px;color:var(--ivory-soft);font-size:16px;}
+  .divider{height:1px;background:var(--line);width:100%;position:relative;}
+  .divider::after{
+    content:"";position:absolute;top:50%;left:50%;
+    width:7px;height:7px;background:var(--gold);
+    transform:translate(-50%,-50%) rotate(45deg);
+    box-shadow:0 0 8px rgba(201,162,39,.5);
+  }
+
+  /* ABOUT */
+  .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:start;}
+  .about-grid p{color:var(--ivory-soft);margin-bottom:16px;font-size:16px;}
+  .stat-row{display:flex;gap:48px;margin-top:36px;}
+  .stat-row div strong{display:block;font-family:'Cormorant Garamond',serif;font-size:36px;color:var(--gold-light);}
+  .stat-row div span{font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--ivory-soft);}
+
+  /* TWO PATHS - signature element */
+  .paths{
+    display:grid;grid-template-columns:1fr 1fr;
+    border:1px solid var(--line);
+    position:relative;
+  }
+  .path{
+    padding:64px 48px;position:relative;overflow:hidden;
+    transition:background .4s ease;
+  }
+  .path + .path{border-left:1px solid var(--line);}
+  .path::before{
+    content:"";position:absolute;inset:0;
+    background:radial-gradient(circle at 50% 0%, rgba(201,162,39,.14), transparent 55%);
+    opacity:0;transition:opacity .5s ease;
+  }
+  .path:hover::before{opacity:1;}
+  .path .eyebrow{margin-bottom:14px;}
+  .path h3{font-size:30px;color:var(--ivory);margin-bottom:16px;}
+  .path p{color:var(--ivory-soft);font-size:15px;margin-bottom:28px;max-width:400px;}
+  .path ul{list-style:none;margin-bottom:32px;}
+  .path li{
+    font-size:14px;color:var(--ivory-soft);padding:10px 0;
+    border-top:1px solid var(--line);
+    display:flex;justify-content:space-between;
+  }
+  .path li span:last-child{color:var(--gold-light);font-family:'Cormorant Garamond',serif;}
+
+  /* PROCESS */
+  .process{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line);}
+  .step{background:var(--bg-black);padding:40px 28px;}
+  .step .num{font-family:'Cormorant Garamond',serif;font-size:42px;color:var(--gold-dim);}
+  .step h4{font-size:18px;margin:14px 0 8px;color:var(--ivory);}
+  .step p{font-size:14px;color:var(--ivory-soft);}
+
+  /* STANDARDS */
+  .standards{display:grid;grid-template-columns:repeat(3,1fr);gap:40px;}
+  .card{background:var(--bg-card);border:1px solid var(--line);padding:36px 30px;}
+  .card h4{font-size:20px;color:var(--gold-light);margin-bottom:12px;}
+  .card p{font-size:14px;color:var(--ivory-soft);}
+
+  /* NETWORK */
+  .network-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line);}
+  .network-item{
+    background:var(--bg-black);padding:40px 24px;text-align:center;
+    display:flex;flex-direction:column;align-items:center;gap:14px;
+    transition:background .3s ease;
+  }
+  .network-item:hover{background:var(--bg-card);}
+  .network-icon{
+    width:44px;height:44px;border-radius:50%;
+    border:1px solid var(--gold-dim);
+    display:flex;align-items:center;justify-content:center;
+    color:var(--gold);font-size:16px;
+  }
+  .network-item span{
+    font-family:'Cormorant Garamond',serif;font-size:16px;
+    color:var(--ivory-soft);letter-spacing:.02em;line-height:1.4;
+  }
+  .network-stats{
+    display:flex;justify-content:center;gap:70px;margin-top:56px;flex-wrap:wrap;
+  }
+  .network-stats div{text-align:center;}
+  .network-stats strong{display:block;font-family:'Cinzel',serif;font-size:34px;color:var(--gold-light);}
+  .network-stats span{font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--ivory-soft);}
+
+  /* TESTIMONIAL */
+  .quote{max-width:760px;margin:0 auto;text-align:center;}
+  .quote p{font-family:'Cormorant Garamond',serif;font-size:28px;font-style:italic;color:var(--ivory);line-height:1.5;}
+  .quote span{display:block;margin-top:20px;font-size:13px;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);}
+
+  .placeholder-badge{
+    display:inline-block;margin-top:16px;padding:8px 16px;
+    background:rgba(201,162,39,.08);border:1px dashed var(--gold-dim);
+    color:var(--gold-light);font-size:12px;letter-spacing:.02em;
+    border-radius:4px;
+  }
+  .testimonial-grid{
+    display:grid;grid-template-columns:repeat(3,1fr);gap:24px;
+  }
+  .t-card{
+    background:var(--bg-card);border:1px solid var(--line);
+    padding:28px 26px;transition:border-color .3s ease;
+  }
+  .t-card:hover{border-color:var(--gold-dim);}
+  .t-head{display:flex;align-items:center;gap:14px;margin-bottom:16px;}
+  .t-avatar{
+    width:46px;height:46px;border-radius:50%;flex-shrink:0;
+    background:linear-gradient(135deg, var(--gold-light), var(--gold));
+    color:#1a1509;font-family:'Cinzel',serif;font-weight:700;font-size:16px;
+    display:flex;align-items:center;justify-content:center;
+  }
+  .t-head strong{display:block;font-size:15px;color:var(--ivory);font-weight:400;}
+  .t-head small{display:block;font-size:12px;color:var(--gold);letter-spacing:.03em;margin-top:2px;}
+  .t-card p{font-size:14px;color:var(--ivory-soft);line-height:1.6;font-style:italic;}
+
+  /* CONTACT */
+  .contact-box{
+    background:var(--bg-card);border:1px solid var(--line);
+    padding:64px;display:grid;grid-template-columns:1fr 1fr;gap:48px;
+  }
+  .contact-box h2{font-size:34px;margin-bottom:14px;}
+  .contact-box p{color:var(--ivory-soft);margin-bottom:28px;font-size:15px;}
+  .contact-list a{display:flex;align-items:center;gap:12px;padding:14px 0;border-top:1px solid var(--line);font-size:15px;color:var(--ivory-soft);transition:color .25s;}
+  .contact-list a:hover{color:var(--gold-light);}
+  form{display:flex;flex-direction:column;gap:16px;}
+  input,select,textarea{
+    background:transparent;border:none;border-bottom:1px solid var(--line);
+    color:var(--ivory);font-family:'Jost',sans-serif;font-size:14px;padding:12px 4px;
+    outline:none;transition:border-color .25s;
+  }
+  input:focus,select:focus,textarea:focus{border-color:var(--gold);}
+  input::placeholder,textarea::placeholder{color:#6b644d;}
+  select option{background:var(--bg-charcoal);}
+  textarea{resize:none;min-height:70px;}
+  .form-divider{display:flex;align-items:center;gap:12px;margin:4px 0;}
+  .form-divider::before,.form-divider::after{content:"";flex:1;height:1px;background:var(--line);}
+  .form-divider span{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--ivory-soft);}
+
+  footer{padding:50px 0;text-align:center;border-top:1px solid var(--line);}
+  footer p{font-size:12px;letter-spacing:.08em;color:var(--ivory-soft);text-transform:uppercase;}
+
+  @media(max-width:860px){
+    .nav-links{display:none;}
+    .about-grid,.paths,.process,.standards,.network-grid,.contact-box,.testimonial-grid{grid-template-columns:1fr;}
+    .network-stats{gap:40px;}
+    .path + .path{border-left:none;border-top:1px solid var(--line);}
+    section{padding:80px 0;}
+    .contact-box{padding:40px 26px;}
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="logo">E-MANAGEMENT<span>.</span></div>
+  <div class="nav-links">
+    <a href="#about">Tentang</a>
+    <a href="#talent">Untuk Talenta</a>
+    <a href="#partner">Untuk Mitra</a>
+    <a href="#network">Jaringan</a>
+    <a href="#contact">Kontak</a>
+  </div>
+</nav>
+
+<section class="hero">
+  <video class="hero-video" autoplay muted loop playsinline>
+    <source src="assets/hero-bg.mp4" type="video/mp4">
+  </video>
+  <div class="hero-overlay"></div>
+  <div class="hero-rule"></div>
+  <span class="eyebrow">Talent &amp; Entertainment Management</span>
+  <h1>Membangun karier di panggung <em>entertainment</em>, dengan standar profesional.</h1>
+  <p>E-MANAGEMENT menjembatani talenta muda berbakat dengan industri hospitality dan entertainment terpercaya — melalui proses seleksi, pelatihan, dan kemitraan yang transparan.</p>
+  <div class="hero-ctas">
+    <a href="#talent" class="btn btn-solid">Saya Talenta</a>
+    <a href="#partner" class="btn">Saya Mitra Bisnis</a>
+  </div>
+  <div class="trust-line">
+    <span class="trust-dot"></span>
+    Dipercaya oleh <strong>+1500 Talenta</strong> &amp; <strong>10+ Mitra</strong> terkenal di Indonesia
+  </div>
+  <div class="scroll-cue">Scroll</div>
+</section>
+
+<div class="wrap">
+<div class="divider"></div>
+
+<section id="about">
+  <div class="section-head">
+    <span class="eyebrow">Tentang Kami</span>
+    <h2>Kepercayaan adalah panggung utama kami.</h2>
+  </div>
+  <div class="about-grid">
+    <div>
+      <p>E-MANAGEMENT adalah agensi talent management yang berfokus pada industri entertainment dan hospitality — menghubungkan talenta muda dengan peluang kerja sebagai Guest Relation Officer (GRO) dan peran serupa, baik secara mandiri maupun melalui perusahaan mitra.</p>
+      <p>Kami percaya bahwa karier di industri ini layak dijalani dengan standar yang jelas: proses rekrutmen transparan, pelatihan yang memadai, dan lingkungan kerja yang aman bagi setiap talenta.</p>
+      <p>Berdiri sejak 2020 — di tengah masa yang penuh tantangan bagi industri hospitality dan entertainment — E-MANAGEMENT sempat ikut terdampak, namun terus membangun kembali langkah demi langkah hingga hari ini.</p>
+    </div>
+    <div>
+      <p>Bagi mitra bisnis — klub, venue, dan penyelenggara acara — kami menyediakan talenta terlatih yang siap tampil profesional di depan klien, lengkap dengan proses seleksi dan pengawasan kualitas.</p>
+      <div class="stat-row">
+        <div><strong>100%</strong><span>Proses Transparan</span></div>
+        <div><strong>1:1</strong><span>Pendampingan Talenta</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+</div>
+
+<section>
+  <div class="wrap section-head">
+    <span class="eyebrow">Dua Jalur, Satu Panggung</span>
+    <h2>Pilih jalur yang sesuai dengan Anda.</h2>
+  </div>
+  <div class="paths">
+    <div class="path" id="talent">
+      <span class="eyebrow">Untuk Talenta</span>
+      <h3>Mulai Karier Anda</h3>
+      <p>Bergabung sebagai talenta binaan E-MANAGEMENT dan kembangkan karier di industri entertainment dengan dukungan penuh.</p>
+      <ul>
+        <li><span>Usia minimal</span><span>18 tahun</span></li>
+        <li><span>Pelatihan</span><span>Disediakan</span></li>
+        <li><span>Skema kerja</span><span>Mandiri / Mitra</span></li>
+      </ul>
+      <a href="#contact" class="btn btn-solid">Daftar Sebagai Talenta</a>
+    </div>
+    <div class="path" id="partner">
+      <span class="eyebrow">Untuk Mitra Bisnis</span>
+      <h3>Sediakan Talenta Terbaik</h3>
+      <p>Kami menyediakan talenta terseleksi dan terlatih untuk venue, klub, dan acara Anda dengan standar profesionalisme tinggi.</p>
+      <ul>
+        <li><span>Proses seleksi</span><span>Ketat</span></li>
+        <li><span>Kontrak kerja sama</span><span>Fleksibel</span></li>
+        <li><span>Support</span><span>Berkelanjutan</span></li>
+      </ul>
+      <a href="#contact" class="btn">Ajukan Kerja Sama</a>
+    </div>
+  </div>
+</section>
+
+<div class="wrap">
+<div class="divider"></div>
+
+<section>
+  <div class="section-head">
+    <span class="eyebrow">Alur Bergabung</span>
+    <h2>Empat langkah menuju panggung.</h2>
+  </div>
+  <div class="process">
+    <div class="step"><div class="num">01</div><h4>Pendaftaran</h4><p>Isi formulir dan kirimkan profil singkat Anda kepada tim kami.</p></div>
+    <div class="step"><div class="num">02</div><h4>Wawancara</h4><p>Sesi perkenalan untuk memahami minat dan kesiapan Anda.</p></div>
+    <div class="step"><div class="num">03</div><h4>Pelatihan</h4><p>Pembekalan etika kerja, komunikasi, dan standar industri.</p></div>
+    <div class="step"><div class="num">04</div><h4>Penempatan</h4><p>Mulai bekerja secara mandiri atau bersama mitra venue kami.</p></div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<section>
+  <div class="section-head">
+    <span class="eyebrow">Standar Kami</span>
+    <h2>Profesionalisme yang bisa dipercaya.</h2>
+  </div>
+  <div class="standards">
+    <div class="card"><h4>Seleksi Transparan</h4><p>Setiap talenta melalui proses wawancara dan verifikasi yang jelas, tanpa biaya tersembunyi.</p></div>
+    <div class="card"><h4>Perlindungan Kerja</h4><p>Jam kerja, kode etik, dan jalur pelaporan yang jelas untuk kenyamanan setiap talenta.</p></div>
+    <div class="card"><h4>Kualitas Terjaga</h4><p>Pelatihan berkelanjutan agar talenta tampil percaya diri dan profesional di hadapan klien.</p></div>
+  </div>
+</section>
+
+<div class="divider"></div>
+</div>
+
+<section id="network">
+  <div class="wrap section-head">
+    <span class="eyebrow">Jaringan Kami</span>
+    <h2>Dipercaya oleh mitra industri.</h2>
+    <p>Bekerja sama dengan klub, lounge, dan penyelenggara acara terkemuka di berbagai kota besar — nama mitra dapat ditampilkan setelah persetujuan resmi.</p>
+  </div>
+  <div class="network-grid">
+    <div class="network-item">
+      <div class="network-icon">◆</div>
+      <span>Premium Nightclub Partner</span>
+    </div>
+    <div class="network-item">
+      <div class="network-icon">◆</div>
+      <span>Lounge &amp; Rooftop Network</span>
+    </div>
+    <div class="network-item">
+      <div class="network-icon">◆</div>
+      <span>Event Organizer Partner</span>
+    </div>
+    <div class="network-item">
+      <div class="network-icon">◆</div>
+      <span>Hospitality Venue Group</span>
+    </div>
+  </div>
+  <div class="network-stats">
+    <div><strong>5+</strong><span>Mitra Aktif</span></div>
+    <div><strong>3</strong><span>Kota Besar</span></div>
+    <div><strong>2020</strong><span>Berdiri Sejak</span></div>
+  </div>
+</section>
+
+<div class="wrap">
+<div class="divider"></div>
+
+<section id="testimonials">
+  <div class="section-head">
+    <span class="eyebrow">Testimoni</span>
+    <h2>Apa kata mereka.</h2>
+    <div class="placeholder-badge">⚠ Placeholder — ganti dengan testimoni asli dari talenta &amp; mitra Anda</div>
+  </div>
+  <div class="testimonial-grid">
+
+    <div class="t-card">
+      <div class="t-head"><div class="t-avatar">A</div><div><strong>[Nama Talenta 1]</strong><small>Talenta — GRO</small></div></div>
+      <p>"[Tulis kutipan testimoni asli di sini — pengalaman bergabung, proses seleksi, atau dukungan yang dirasakan.]"</p>
+    </div>
+
+    <div class="t-card">
+      <div class="t-head"><div class="t-avatar">B</div><div><strong>[Nama Talenta 2]</strong><small>Talenta — GRO</small></div></div>
+      <p>"[Tulis kutipan testimoni asli di sini — pengalaman bergabung, proses seleksi, atau dukungan yang dirasakan.]"</p>
+    </div>
+
+    <div class="t-card">
+      <div class="t-head"><div class="t-avatar">C</div><div><strong>[Nama Talenta 3]</strong><small>Talenta — GRO</small></div></div>
+      <p>"[Tulis kutipan testimoni asli di sini — pengalaman bergabung, proses seleksi, atau dukungan yang dirasakan.]"</p>
+    </div>
+
+    <div class="t-card">
+      <div class="t-head"><div class="t-avatar">D</div><div><strong>[Nama Talenta 4]</strong><small>Talenta — GRO</small></div></div>
+      <p>"[Tulis kutipan testimoni asli di sini — pengalaman bergabung, proses seleksi, atau dukungan yang dirasakan.]"</p>
+    </div>
+
+    <div class="t-card">
+      <div class="t-head"><div class="t-avatar">E</div><div><strong>[Nama Talenta 5]</strong><small>Talenta — GRO</small></div></div>
+      <p>"[Tulis kutipan testimoni asli di sini — pengalaman bergabung, proses seleksi, atau dukungan yang dirasakan.]"</p>
+    </div>
+
+    <div class="t-card">
+      <div class="t-head"><div class="t-avatar">F</div><div><strong>[Nama Talenta 6]</strong><small>Talenta — GRO</small></div></div>
+      <p>"[Tulis kutipan testimoni asli di sini — pengalaman bergabung, proses seleksi, atau dukungan yang dirasakan.]"</p>
+    </div>
+
+    <div class="t-card">
+      <div class="t-head"><div class="t-avatar">G</div><div><strong>[Nama Mitra 1]</strong><small>Mitra Bisnis — Venue</small></div></div>
+      <p>"[Tulis kutipan testimoni asli di sini — pengalaman kerja sama, kualitas talenta, atau profesionalisme tim.]"</p>
+    </div>
+
+    <div class="t-card">
+      <div class="t-head"><div class="t-avatar">H</div><div><strong>[Nama Mitra 2]</strong><small>Mitra Bisnis — Venue</small></div></div>
+      <p>"[Tulis kutipan testimoni asli di sini — pengalaman kerja sama, kualitas talenta, atau profesionalisme tim.]"</p>
+    </div>
+
+    <div class="t-card">
+      <div class="t-head"><div class="t-avatar">I</div><div><strong>[Nama Mitra 3]</strong><small>Mitra Bisnis — Event Organizer</small></div></div>
+      <p>"[Tulis kutipan testimoni asli di sini — pengalaman kerja sama, kualitas talenta, atau profesionalisme tim.]"</p>
+    </div>
+
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<section id="contact">
+  <div class="contact-box">
+    <div>
+      <span class="eyebrow">Hubungi Kami</span>
+      <h2>Mari mulai percakapan.</h2>
+      <p>Baik Anda talenta yang ingin bergabung atau mitra bisnis yang ingin bekerja sama, tim kami siap membantu.</p>
+      <div class="contact-list">
+        <a href="https://wa.me/6288214338626">WhatsApp — +62 882-1433-8626</a>
+        <a href="mailto:emanagement.recruitment@gmail.com">emanagement.recruitment@gmail.com</a>
+        <a href="https://instagram.com/lokertalent_emanagement">@lokertalent_emanagement</a>
+      </div>
+    </div>
+    <form id="reg-form" onsubmit="return sendToWhatsApp(event)">
+      <input type="text" id="reg-nama" placeholder="Nama lengkap" required>
+      <select id="reg-jenis" required>
+        <option value="" disabled selected>Saya mendaftar sebagai...</option>
+        <option>Talenta</option>
+        <option>Mitra Bisnis</option>
+      </select>
+      <input type="text" id="reg-wa" placeholder="Nomor WhatsApp" required>
+      <textarea id="reg-pesan" placeholder="Ceritakan sedikit tentang Anda"></textarea>
+      <button type="submit" class="btn btn-solid" style="width:100%;">Kirim via WhatsApp</button>
+      <div class="form-divider"><span>atau</span></div>
+      <a href="https://forms.gle/TJQHw22Ch5GU7XPu7" target="_blank" class="btn" style="width:100%;text-align:center;">Isi Form Pendaftaran Lengkap</a>
+    </form>
+  </div>
+</section>
+</div>
+
+<footer>
+  <p>E-MANAGEMENT Talent Management &nbsp;•&nbsp; 2026</p>
+</footer>
+
+<script>
+  function sendToWhatsApp(e) {
+    e.preventDefault();
+    const nama = document.getElementById('reg-nama').value.trim();
+    const jenis = document.getElementById('reg-jenis').value;
+    const wa = document.getElementById('reg-wa').value.trim();
+    const pesan = document.getElementById('reg-pesan').value.trim();
+
+    const teks =
+      `Halo E-MANAGEMENT, saya ingin mendaftar.%0A%0A` +
+      `Nama: ${encodeURIComponent(nama)}%0A` +
+      `Mendaftar sebagai: ${encodeURIComponent(jenis)}%0A` +
+      `Nomor WhatsApp: ${encodeURIComponent(wa)}%0A` +
+      (pesan ? `Pesan: ${encodeURIComponent(pesan)}` : '');
+
+    const nomorTujuan = "6288214338626";
+    const url = `https://wa.me/${nomorTujuan}?text=${teks}`;
+    window.open(url, '_blank');
+
+    e.target.reset();
+    return false;
+  }
+
+  const nav = document.querySelector('nav');
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 40) {
+      nav.classList.add('scrolled');
+    } else {
+      nav.classList.remove('scrolled');
+    }
+  });
+</script>
+
+</body>
+</html>
