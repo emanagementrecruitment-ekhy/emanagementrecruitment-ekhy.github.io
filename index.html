@@ -123,8 +123,20 @@
   }
   .letterbox-top{top:0;}
   .letterbox-bottom{bottom:0;}
-  .hero-rule,.hero .eyebrow,.hero h1,.hero p,.hero-ctas,.trust-line,.scroll-cue{
+  .hero-rule,.hero .eyebrow,.hero h1,.hero p,.hero-ctas,.trust-line,.scroll-cue,.hero-logo-wrap{
     position:relative;z-index:3;
+  }
+  .hero-logo-wrap{
+    perspective:800px;margin-bottom:22px;
+  }
+  .hero-logo-coin{
+    width:88px;height:88px;border-radius:50%;object-fit:cover;display:block;
+    box-shadow:0 0 0 2px rgba(201,162,39,.4), 0 10px 34px rgba(201,162,39,.35);
+    animation:coin-spin 6s linear infinite;
+  }
+  @keyframes coin-spin{
+    0%{transform:rotateY(0deg);}
+    100%{transform:rotateY(360deg);}
   }
   .hero-rule{width:1px;height:70px;background:linear-gradient(var(--gold), transparent);margin-bottom:26px;}
   .hero h1{
@@ -400,6 +412,9 @@
   <div class="hero-vignette"></div>
   <div class="letterbox letterbox-top"></div>
   <div class="letterbox letterbox-bottom"></div>
+  <div class="hero-logo-wrap">
+    <img class="hero-logo-coin" src="assets/logo-emanagement.jpg" alt="E-Management">
+  </div>
   <div class="hero-rule"></div>
   <span class="eyebrow">Talent &amp; Entertainment Management</span>
   <h1>Membangun karier di panggung <em>entertainment</em>, dengan standar profesional.</h1>
