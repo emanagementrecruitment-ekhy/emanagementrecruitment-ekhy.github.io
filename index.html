@@ -378,9 +378,68 @@
   footer{padding:50px 0;text-align:center;border-top:1px solid var(--line);}
   footer p{font-size:12px;letter-spacing:.08em;color:var(--ivory-soft);text-transform:uppercase;}
 
+  /* DEMO SISTEM */
+  .demo-showcase{margin:46px 0 34px;}
+  .demo-grid{display:grid;grid-template-columns:1.35fr 0.65fr;gap:36px;align-items:start;}
+
+  .demo-browser{background:var(--bg-card);border:1px solid var(--line);border-radius:10px;overflow:hidden;box-shadow:0 30px 60px rgba(0,0,0,.5);}
+  .demo-browser-bar{display:flex;align-items:center;gap:7px;padding:11px 14px;background:var(--bg-charcoal);border-bottom:1px solid var(--line);}
+  .demo-browser-dot{width:9px;height:9px;border-radius:50%;background:var(--gold-dim);opacity:.5;}
+  .demo-browser-dot.on{background:var(--gold-light);opacity:1;}
+  .demo-browser-url{margin-left:8px;flex:1;background:var(--bg-black);border:1px solid var(--line);border-radius:6px;padding:5px 12px;font-family:'Jost',sans-serif;font-size:10px;color:var(--ivory-soft);overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+  .demo-browser-body{display:flex;min-height:320px;}
+  .demo-sidebar{width:142px;flex-shrink:0;background:var(--bg-black);border-right:1px solid var(--line);padding:14px 0;}
+  .demo-sidebar-group{padding:12px 16px 5px;font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:var(--gold-dim);}
+  .demo-sidebar-item{padding:8px 16px;font-size:10px;color:var(--ivory-soft);border-left:2px solid transparent;}
+  .demo-sidebar-item.active{color:var(--gold-light);border-left-color:var(--gold);background:rgba(201,162,39,.08);font-weight:500;}
+  .demo-main{flex:1;min-width:0;padding:18px 20px;background:var(--bg-card);}
+  .demo-main-title{font-family:'Cormorant Garamond',serif;font-weight:600;font-size:18px;text-transform:uppercase;letter-spacing:.03em;color:var(--ivory);margin-bottom:3px;}
+  .demo-main-sub{font-size:10px;color:var(--ivory-soft);margin-bottom:14px;}
+  .demo-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:9px;margin-bottom:16px;}
+  .demo-stat{background:var(--bg-black);border:1px solid var(--line);border-radius:8px;padding:9px 11px;}
+  .demo-stat-label{font-size:7.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--ivory-soft);}
+  .demo-stat-value{font-family:'Cormorant Garamond',serif;font-weight:600;font-size:20px;color:var(--gold-light);margin-top:3px;}
+  .demo-table-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch;}
+  .demo-table{width:100%;min-width:300px;border-collapse:collapse;font-size:9.5px;}
+  .demo-table th{text-align:left;color:var(--ivory-soft);font-weight:400;padding:5px 6px;font-size:8px;text-transform:uppercase;letter-spacing:.04em;}
+  .demo-table td{padding:5px 6px;color:var(--ivory-soft);border-top:1px solid var(--line);white-space:nowrap;}
+  .demo-dot-row{display:flex;gap:2px;}
+  .demo-dotc{width:6px;height:6px;border-radius:2px;background:var(--line);}
+  .demo-dotc.on{background:var(--gold);}
+
+  .demo-phone-wrap{display:flex;justify-content:center;}
+  .demo-phone{width:220px;background:var(--bg-black);border:6px solid var(--bg-charcoal);border-radius:32px;box-shadow:0 30px 60px rgba(0,0,0,.5);overflow:hidden;position:relative;}
+  .demo-phone-notch{position:absolute;top:0;left:50%;transform:translateX(-50%);width:64px;height:15px;background:var(--bg-charcoal);border-radius:0 0 9px 9px;z-index:2;}
+  .demo-phone-screen{padding:24px 13px 0;}
+  .demo-phone-greet{font-family:'Cormorant Garamond',serif;font-weight:600;font-size:16px;color:var(--ivory);margin-bottom:2px;}
+  .demo-phone-sub{font-size:9px;color:var(--ivory-soft);margin-bottom:13px;}
+  .demo-phone-card{background:var(--bg-card);border:1px solid var(--line);border-radius:10px;padding:10px 11px;margin-bottom:9px;}
+  .demo-phone-card .label{font-size:7.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--ivory-soft);margin-bottom:5px;}
+  .demo-phone-card .value{font-family:'Cormorant Garamond',serif;font-weight:600;font-size:17px;color:var(--ivory);}
+  .demo-phone-check{margin-top:7px;display:inline-flex;align-items:center;gap:5px;background:rgba(201,162,39,.12);border:1px solid rgba(201,162,39,.35);color:var(--gold-light);font-size:9px;padding:4px 9px;border-radius:20px;}
+  .demo-phone-voucher{display:flex;justify-content:space-between;font-size:9px;padding:5px 0;border-top:1px solid var(--line);color:var(--ivory-soft);}
+  .demo-phone-voucher:first-of-type{border-top:none;}
+  .demo-phone-nav{display:flex;justify-content:space-around;padding:10px 0 12px;margin-top:4px;border-top:1px solid var(--line);background:var(--bg-card);font-size:13px;}
+  .demo-phone-nav span{color:var(--gold-dim);}
+  .demo-phone-nav span.active{color:var(--gold-light);}
+
+  .demo-cta{margin-top:30px;text-align:center;}
+  .demo-cta-note{font-size:11px;color:var(--ivory-soft);margin-top:13px;line-height:1.7;}
+  .demo-cta-note code{background:var(--bg-black);padding:2px 7px;border-radius:5px;color:var(--gold-light);border:1px solid var(--line);}
+
+  @media(max-width:640px){
+    .demo-sidebar{width:82px;}
+    .demo-sidebar-item{padding:6px 9px;font-size:8.5px;}
+    .demo-sidebar-group{padding:9px 9px 4px;font-size:7.5px;}
+    .demo-stats{grid-template-columns:repeat(2,1fr);}
+    .demo-main{padding:13px;}
+    .demo-table{font-size:8px;}
+    .demo-phone{width:190px;}
+  }
+
   @media(max-width:860px){
     .nav-links{display:none;}
-    .about-grid,.paths,.process,.standards,.network-grid,.contact-box,.testimonial-grid{grid-template-columns:1fr;}
+    .about-grid,.paths,.process,.standards,.network-grid,.contact-box,.testimonial-grid,.demo-grid{grid-template-columns:1fr;}
     .network-stats{gap:40px;}
     .path + .path{border-left:none;border-top:1px solid var(--line);}
     section{padding:80px 0;}
@@ -594,10 +653,133 @@
 <section id="app">
   <div class="section-head">
     <span class="eyebrow">Aplikasi</span>
-    <h2>Unduh Aplikasi AR Corp.</h2>
-    <p>Untuk talent dan tim kantor — cek absensi, voucher, kasbon, dan slip gaji langsung dari HP atau komputer.</p>
+    <h2>Sistem AR Corp HR — dari sini semuanya bermula.</h2>
+    <p>Dibangun pertama kali untuk E-MANAGEMENT — absensi GPS, pendapatan/voucher talenta, kasbon, hingga slip gaji dalam satu sistem. Tampilan di bawah ini ilustrasi sederhana dari sistem aslinya.</p>
   </div>
-  <div style="display:flex;flex-wrap:wrap;gap:18px;">
+
+  <div class="demo-showcase">
+    <div class="demo-grid">
+      <div class="demo-browser">
+        <div class="demo-browser-bar">
+          <span class="demo-browser-dot on"></span>
+          <span class="demo-browser-dot"></span>
+          <span class="demo-browser-dot"></span>
+          <span class="demo-browser-url">arcorp.emanagement.id/admin/absensi-harian</span>
+        </div>
+        <div class="demo-browser-body">
+          <div class="demo-sidebar">
+            <div class="demo-sidebar-group">Data Karyawan</div>
+            <div class="demo-sidebar-item">Data Karyawan</div>
+            <div class="demo-sidebar-item">Data Tera</div>
+            <div class="demo-sidebar-item active">Absensi Harian</div>
+            <div class="demo-sidebar-item">Kasbon</div>
+            <div class="demo-sidebar-item">Lokasi &amp; Absensi</div>
+            <div class="demo-sidebar-item">Kalender</div>
+            <div class="demo-sidebar-item">Rincian Totalan</div>
+          </div>
+          <div class="demo-main">
+            <div class="demo-main-title">Absensi Harian</div>
+            <div class="demo-main-sub">September 2026 · Self check-in per outlet</div>
+            <div class="demo-stats">
+              <div class="demo-stat">
+                <div class="demo-stat-label">Total Terdaftar</div>
+                <div class="demo-stat-value">8</div>
+              </div>
+              <div class="demo-stat">
+                <div class="demo-stat-label">Total VCR Bulan Ini</div>
+                <div class="demo-stat-value">Rp 12,4jt</div>
+              </div>
+              <div class="demo-stat">
+                <div class="demo-stat-label">Rata-rata % Hadir</div>
+                <div class="demo-stat-value">92%</div>
+              </div>
+              <div class="demo-stat">
+                <div class="demo-stat-label">Hari Kalender</div>
+                <div class="demo-stat-value">30</div>
+              </div>
+            </div>
+            <div class="demo-table-wrap"><table class="demo-table">
+              <thead>
+                <tr><th>Nama</th><th>Absensi</th><th style="text-align:right;">Hadir</th><th style="text-align:right;">%</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Salsa Ramadhani<br><span style="color:var(--gold-dim); font-size:8.5px;">Tera · Stadium Jakarta</span></td>
+                  <td><div class="demo-dot-row"><span class="demo-dotc on"></span><span class="demo-dotc on"></span><span class="demo-dotc on"></span><span class="demo-dotc on"></span><span class="demo-dotc"></span><span class="demo-dotc on"></span><span class="demo-dotc on"></span><span class="demo-dotc on"></span></div></td>
+                  <td style="text-align:right;">24</td>
+                  <td style="text-align:right; color:var(--gold-light);">96%</td>
+                </tr>
+                <tr>
+                  <td>Nadia Putri<br><span style="color:var(--gold-dim); font-size:8.5px;">Tera · Club 36</span></td>
+                  <td><div class="demo-dot-row"><span class="demo-dotc on"></span><span class="demo-dotc on"></span><span class="demo-dotc"></span><span class="demo-dotc on"></span><span class="demo-dotc on"></span><span class="demo-dotc on"></span><span class="demo-dotc on"></span><span class="demo-dotc"></span></div></td>
+                  <td style="text-align:right;">22</td>
+                  <td style="text-align:right; color:var(--gold-light);">88%</td>
+                </tr>
+                <tr>
+                  <td>Alya Maharani<br><span style="color:var(--gold-dim); font-size:8.5px;">Tera · Gold Dragon</span></td>
+                  <td><div class="demo-dot-row"><span class="demo-dotc on"></span><span class="demo-dotc on"></span><span class="demo-dotc on"></span><span class="demo-dotc on"></span><span class="demo-dotc on"></span><span class="demo-dotc"></span><span class="demo-dotc on"></span><span class="demo-dotc on"></span></div></td>
+                  <td style="text-align:right;">25</td>
+                  <td style="text-align:right; color:var(--gold-light);">100%</td>
+                </tr>
+                <tr>
+                  <td>Budi Santoso<br><span style="color:var(--gold-dim); font-size:8.5px;">Karyawan · Kantor Pusat</span></td>
+                  <td><div class="demo-dot-row"><span class="demo-dotc on"></span><span class="demo-dotc on"></span><span class="demo-dotc on"></span><span class="demo-dotc"></span><span class="demo-dotc on"></span><span class="demo-dotc on"></span><span class="demo-dotc on"></span><span class="demo-dotc on"></span></div></td>
+                  <td style="text-align:right;">23</td>
+                  <td style="text-align:right; color:var(--gold-light);">92%</td>
+                </tr>
+                <tr>
+                  <td>Andi Wijaya<br><span style="color:var(--gold-dim); font-size:8.5px;">Karyawan · Kantor Pusat</span></td>
+                  <td><div class="demo-dot-row"><span class="demo-dotc on"></span><span class="demo-dotc"></span><span class="demo-dotc on"></span><span class="demo-dotc on"></span><span class="demo-dotc on"></span><span class="demo-dotc on"></span><span class="demo-dotc"></span><span class="demo-dotc on"></span></div></td>
+                  <td style="text-align:right;">21</td>
+                  <td style="text-align:right; color:var(--gold-light);">84%</td>
+                </tr>
+              </tbody>
+            </table></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="demo-phone-wrap">
+        <div class="demo-phone">
+          <div class="demo-phone-notch"></div>
+          <div class="demo-phone-screen">
+            <div class="demo-phone-greet">Halo, Salsa 👋</div>
+            <div class="demo-phone-sub">Tera · Stadium Jakarta</div>
+            <div class="demo-phone-card">
+              <div class="label">Absensi Hari Ini</div>
+              <div class="value">Sudah Absen</div>
+              <div class="demo-phone-check">✓ Tercatat 19:04</div>
+            </div>
+            <div class="demo-phone-card">
+              <div class="label">Slip Gaji September</div>
+              <div class="value">Rp 3.200.000</div>
+            </div>
+            <div class="demo-phone-card">
+              <div class="label">Pendapatan Bulan Ini</div>
+              <div class="demo-phone-voucher"><span>Klien A · Platinum</span><span>Rp 400rb</span></div>
+              <div class="demo-phone-voucher"><span>Klien B · Platinum</span><span>Rp 400rb</span></div>
+              <div class="demo-phone-voucher"><span>Klien C · Platinum</span><span>Rp 400rb</span></div>
+            </div>
+          </div>
+          <div class="demo-phone-nav">
+            <span class="active">⌂</span>
+            <span>🎫</span>
+            <span>💵</span>
+            <span>👤</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="demo-cta">
+      <a class="btn btn-solid" href="https://ekhy-arcorp-ar-corp-hr-production.up.railway.app/login" target="_blank" rel="noopener">Coba Demo Sekarang</a>
+      <div class="demo-cta-note">
+        Pilih tab <strong>STAFF &amp; PR</strong>, masuk dengan kode <code>DEMO-01</code> — kode verifikasi otomatis tampil di layar, tanpa email/WA asli.
+      </div>
+    </div>
+  </div>
+
+  <div style="display:flex;flex-wrap:wrap;gap:18px;margin-top:34px;padding-top:28px;border-top:1px solid var(--line);">
     <a class="btn btn-solid" href="https://ekhy-arcorp-ar-corp-hr-production.up.railway.app/downloads/arcorp.apk" download>Unduh Aplikasi Android (APK)</a>
     <a class="btn" href="https://github.com/emanagementrecruitment-ekhy/ekhy-arcorp-ar-corp-hr/releases/latest/download/AR-Corp-Desktop-Setup.exe">Unduh Desktop (Windows)</a>
   </div>
