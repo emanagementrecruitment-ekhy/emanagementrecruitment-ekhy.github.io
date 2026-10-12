@@ -21,6 +21,7 @@
 
 <!-- Favicon (opsional, ganti jika sudah punya logo) -->
 <meta name="theme-color" content="#000000">
+<link rel="icon" type="image/png" href="favicon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
@@ -515,6 +516,14 @@
     .ambient .moon{animation:none;transform:translate3d(78vw,12vh,0);opacity:.88;}
     .reveal{opacity:1;transform:none;transition:none;}
   }
+
+  /* Logo mahkota emas (tidak bulat, jadi tanpa bingkai lingkaran) */
+  .logo-spin{width:44px;height:44px;border-radius:0;overflow:visible;box-shadow:none;}
+  .logo-spin:hover{box-shadow:none;transform:scale(1.08);}
+  .logo-spin img{object-fit:contain;filter:drop-shadow(0 0 8px rgba(255,215,0,.35));}
+  .hero-logo-coin{width:auto;height:220px;border-radius:0;object-fit:contain;box-shadow:none;opacity:.92;filter:drop-shadow(0 0 30px rgba(255,215,0,.4));}
+  .foot-logo{width:auto;height:72px;border-radius:0;box-shadow:none;object-fit:contain;filter:drop-shadow(0 0 12px rgba(255,215,0,.3));}
+  @media(max-width:860px){.hero-logo-coin{height:160px;}}
 </style>
 </head>
 <body>
@@ -528,7 +537,7 @@
 
 <nav>
   <div class="nav-brand">
-    <a class="logo-spin" href="https://wa.me/6288214338626" target="_blank" rel="noopener" aria-label="Chat Admin via WhatsApp"><img src="assets/logo-emanagement.jpg" alt="E-Management"></a>
+    <a class="logo-spin" href="https://wa.me/6288214338626" target="_blank" rel="noopener" aria-label="Chat Admin via WhatsApp"><img src="assets/logo-sm.webp" alt="E-Management" width="40" height="40"></a>
     <a class="brand-name" href="#top">E-MANAGEMENT</a>
   </div>
   <button class="nav-toggle" id="nav-toggle" aria-label="Buka menu" aria-expanded="false" aria-controls="nav-links"><span></span><span></span><span></span></button>
@@ -543,7 +552,7 @@
 
 <section class="hero" id="top">
   <div class="hero-logo-wrap">
-    <img class="hero-logo-coin" src="assets/logo-emanagement.jpg" alt="E-Management">
+    <img class="hero-logo-coin" src="assets/logo-hero.webp" alt="E-Management" width="220" height="220" fetchpriority="high">
   </div>
   <div class="hero-rule"></div>
   <span class="eyebrow">Talent &amp; Entertainment Management</span>
@@ -863,7 +872,7 @@
 <footer>
   <div class="wrap foot-grid">
     <div>
-      <img class="foot-logo" src="assets/logo-emanagement.jpg" alt="E-Management" width="64" height="64" loading="lazy">
+      <img class="foot-logo" src="assets/logo-sm.webp" alt="E-Management" width="72" height="72" loading="lazy">
       <p class="foot-name">E-MANAGEMENT</p>
       <p class="foot-tag">Talent &amp; Entertainment Management</p>
     </div>
