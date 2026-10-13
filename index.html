@@ -524,6 +524,28 @@
   .hero-logo-coin{width:auto;height:220px;border-radius:0;object-fit:contain;box-shadow:none;opacity:.92;filter:drop-shadow(0 0 30px rgba(255,215,0,.4));}
   .foot-logo{width:auto;height:72px;border-radius:0;box-shadow:none;object-fit:contain;filter:drop-shadow(0 0 12px rgba(255,215,0,.3));}
   @media(max-width:860px){.hero-logo-coin{height:160px;}}
+
+  /* Jaringan: tanpa kotak, logo mitra melayang seperti asteroid di langit malam */
+  .network-grid{display:flex;flex-wrap:wrap;justify-content:center;gap:34px 38px;max-width:1100px;margin:0 auto;padding:10px 24px;background:transparent;border:0;}
+  .network-item{width:150px;padding:10px;background:transparent;border:0;gap:12px;animation:asteroid var(--d,10s) ease-in-out infinite alternate;animation-delay:var(--dl,0s);will-change:transform;}
+  .network-item:hover{background:transparent;animation-play-state:paused;}
+  .network-item:nth-child(3n+1){--dx:12px;--dy:-16px;--r:-3deg;--d:9s;}
+  .network-item:nth-child(3n+2){--dx:-14px;--dy:12px;--r:3deg;--d:11s;}
+  .network-item:nth-child(3n){--dx:9px;--dy:15px;--r:-2deg;--d:13s;}
+  .network-item:nth-child(2n){--dl:-4s;}
+  .network-item:nth-child(5n){--dl:-8s;}
+  .network-item:nth-child(7n){--dl:-2s;}
+  @keyframes asteroid{
+    0%{transform:translate3d(0,0,0) rotate(0deg);}
+    50%{transform:translate3d(calc(var(--dx)*.4),calc(var(--dy)*-.6),0) rotate(var(--r));}
+    100%{transform:translate3d(var(--dx),var(--dy),0) rotate(0deg);}
+  }
+  .network-logo{width:72px;height:72px;border:1px solid rgba(255,215,0,.55);box-shadow:0 0 0 4px rgba(255,215,0,.06),0 0 26px rgba(255,215,0,.28),0 10px 24px rgba(0,0,0,.6);transition:box-shadow .3s,transform .3s;}
+  .network-item:hover .network-logo{box-shadow:0 0 0 4px rgba(255,215,0,.12),0 0 38px rgba(255,215,0,.55),0 10px 24px rgba(0,0,0,.6);transform:scale(1.08);}
+  .network-item span{color:#e8e8e8;text-shadow:0 2px 10px rgba(0,0,0,.9),0 0 3px rgba(0,0,0,.9);font-size:15px;}
+  .network-stats{margin-top:48px;}
+  @media(max-width:860px){.network-grid{gap:26px 22px;padding:10px 12px;}.network-item{width:120px;padding:6px;}.network-logo{width:60px;height:60px;}.network-item span{font-size:13px;}}
+  @media(prefers-reduced-motion:reduce){.network-item{animation:none;}}
 </style>
 </head>
 <body>
