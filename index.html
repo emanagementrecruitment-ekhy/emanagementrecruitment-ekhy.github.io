@@ -941,6 +941,32 @@
     els.forEach(function(e){io.observe(e);});
     setTimeout(function(){els.forEach(function(e){e.classList.add('in');});},6000);
   }else{els.forEach(function(e){e.classList.add('in');});}
+  /* Parallax logo mitra: bergeser saat digulir (properti 'translate' menyatu dengan animasi melayang) */
+  (function(){
+    var sec=document.getElementById('network');
+    if(!sec||window.matchMedia('(prefers-reduced-motion: reduce)').matches)return;
+    var items=Array.prototype.slice.call(sec.querySelectorAll('.network-item'));
+    var DEPTH=[1.0,-0.7,1.5,-1.2,0.6,-1.0,1.3,-0.5,0.9,-1.4,0.7,-0.9,1.2]; /* tanda minus = arah berlawanan */
+    var visible=false,ticking=false;
+    function update(){
+      ticking=false;
+      var r=sec.getBoundingClientRect(),vh=window.innerHeight;
+      var p=((r.top+r.height/2)-vh/2)/vh; /* ~ -1.5 .. 1.5, 0 saat section tepat di tengah layar */
+      p=Math.max(-1.5,Math.min(1.5,p));
+      var amp=window.innerWidth<860?34:62;
+      for(var i=0;i<items.length;i++){
+        var d=DEPTH[i%DEPTH.length];
+        items[i].style.translate=(p*d*amp*0.35).toFixed(1)+'px '+(p*d*amp).toFixed(1)+'px';
+      }
+    }
+    function onScroll(){if(!visible||ticking)return;ticking=true;requestAnimationFrame(update);}
+    if('IntersectionObserver' in window){
+      new IntersectionObserver(function(en){visible=en[0].isIntersecting;if(visible)onScroll();},{rootMargin:'200px 0px'}).observe(sec);
+    }else{visible=true;}
+    window.addEventListener('scroll',onScroll,{passive:true});
+    window.addEventListener('resize',onScroll);
+    update();
+  })();
   /* Form -> WhatsApp */
   window.sendToWhatsApp=function(e){
     e.preventDefault();
