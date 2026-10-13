@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>E-MANAGEMENT | Talent Management</title>
-<meta name="description" content="E-MANAGEMENT adalah agensi talent management yang menjembatani talenta muda dengan industri hospitality dan entertainment terpercaya di Indonesia — sebagai Guest Relation Officer (GRO), baik mandiri maupun melalui mitra perusahaan.">
+<meta name="description" content="E-MANAGEMENT adalah agensi talent management yang menjembatani talenta muda dengan industri hospitality dan entertainment terpercaya di Indonesia (penempatan di Medan, Batam, Surabaya, Makassar, Bali, Nabire, Timika, dan Jayapura) — sebagai Guest Relation Officer (GRO), baik mandiri maupun melalui mitra perusahaan.">
 <meta name="keywords" content="talent management, GRO, guest relation officer, lowongan talenta, entertainment management, hospitality, klub malam, event organizer, loker talent, E-MANAGEMENT">
 <meta name="author" content="E-MANAGEMENT">
 <meta name="robots" content="index, follow">
@@ -546,6 +546,21 @@
   .network-stats{margin-top:48px;}
   @media(max-width:860px){.network-grid{gap:26px 22px;padding:10px 12px;}.network-item{width:120px;padding:6px;}.network-logo{width:60px;height:60px;}.network-item span{font-size:13px;}}
   @media(prefers-reduced-motion:reduce){.network-item{animation:none;}}
+
+  /* Penempatan & Kerja Sama: kota-kota */
+  .cities{text-align:center;max-width:900px;margin:70px auto 0;padding:0 24px;}
+  .cities h3{font-family:'Poppins',sans-serif;font-weight:600;font-size:clamp(22px,3vw,30px);color:#fff;margin:10px 0 28px;}
+  .city-list{list-style:none;display:flex;flex-wrap:wrap;justify-content:center;gap:16px 14px;}
+  .city-list li{position:relative;display:inline-flex;align-items:center;gap:10px;padding:11px 24px 11px 20px;border:1px solid rgba(255,215,0,.45);border-radius:40px;background:rgba(0,0,0,.5);font-family:'Poppins',sans-serif;font-weight:600;font-size:13px;letter-spacing:.16em;text-transform:uppercase;color:#f2f2f2;box-shadow:0 0 22px rgba(255,215,0,.12);animation:asteroid var(--d,10s) ease-in-out infinite alternate;animation-delay:var(--dl,0s);transition:border-color .25s,box-shadow .25s,color .25s;}
+  .city-list li::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--gold);box-shadow:0 0 0 3px rgba(255,215,0,.18),0 0 12px rgba(255,215,0,.8);animation:pulse 2.4s ease-in-out infinite;}
+  .city-list li:hover{border-color:var(--gold);color:var(--gold);box-shadow:0 0 30px rgba(255,215,0,.35);animation-play-state:paused;}
+  .city-list li:nth-child(3n+1){--dx:8px;--dy:-9px;--r:-1.5deg;--d:8s;}
+  .city-list li:nth-child(3n+2){--dx:-9px;--dy:8px;--r:1.5deg;--d:10s;}
+  .city-list li:nth-child(3n){--dx:6px;--dy:10px;--r:-1deg;--d:12s;}
+  .city-list li:nth-child(2n){--dl:-4s;}
+  .city-list li:nth-child(5n){--dl:-7s;}
+  @media(max-width:860px){.cities{margin-top:48px;}.city-list li{font-size:12px;padding:10px 18px 10px 15px;letter-spacing:.12em;}}
+  @media(prefers-reduced-motion:reduce){.city-list li,.city-list li::before{animation:none;}}
 </style>
 </head>
 <body>
@@ -686,7 +701,7 @@
   <div class="wrap section-head">
     <span class="eyebrow">Jaringan Kami</span>
     <h2>Dipercaya oleh mitra industri.</h2>
-    <p>Bekerja sama dengan klub, lounge, dan hotel terkemuka di berbagai kota besar.</p>
+    <p>Bekerja sama dengan klub, lounge, dan hotel terkemuka di berbagai kota besar. Penempatan talenta dan kerja sama kami mencakup Medan, Batam, Surabaya, Makassar, Bali, Nabire, Timika, dan Jayapura.</p>
   </div>
   <div class="network-grid">
     <div class="network-item">
@@ -742,9 +757,16 @@
       <span>Classic Hotel</span>
     </div>
   </div>
-  <div class="network-stats">
+  <div class="cities">
+      <span class="eyebrow">Penempatan &amp; Kerja Sama</span>
+      <h3>Hadir di 8 kota di seluruh Indonesia.</h3>
+      <ul class="city-list">
+        <li>Medan</li><li>Batam</li><li>Surabaya</li><li>Makassar</li><li>Bali</li><li>Nabire</li><li>Timika</li><li>Jayapura</li>
+      </ul>
+    </div>
+    <div class="network-stats">
     <div><strong>13+</strong><span>Mitra Aktif</span></div>
-    <div><strong>3</strong><span>Kota Besar</span></div>
+    <div><strong>8</strong><span>Kota Penempatan</span></div>
     <div><strong>2020</strong><span>Berdiri Sejak</span></div>
   </div>
 </section>
@@ -934,7 +956,7 @@
   document.querySelectorAll('.nav-links a').forEach(function(a){a.addEventListener('click',function(){setOpen(false);});});
   document.addEventListener('keydown',function(e){if(e.key==='Escape')setOpen(false);});
   /* Muncul saat digulir (dengan cadangan agar konten tidak pernah tersembunyi) */
-  var els=document.querySelectorAll('.section-head,.path,.step,.card,.network-item,.t-card,.contact-box,.about-grid,.network-stats');
+  var els=document.querySelectorAll('.section-head,.path,.step,.card,.network-item,.t-card,.contact-box,.about-grid,.network-stats,.cities');
   els.forEach(function(e){e.classList.add('reveal');});
   if('IntersectionObserver' in window){
     var io=new IntersectionObserver(function(en){en.forEach(function(x){if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target);}});},{threshold:.12});
